@@ -1,7 +1,7 @@
 import os
 
-input_directory_1 = "D:\\Fadil\\Loops and Samples"
-input_directory_2 = "D:\\Fadil\\Music Production\\Loops and Samples"
+input_directory_1 = input("Insert the folder you want to move: ")
+input_directory_2 = input("Insert the folder that should get the content from the first folder: ")
 
 folders = [input_directory_1, input_directory_2]
 
@@ -41,10 +41,25 @@ sub_folders_1 = get_list_1()
 
 
 def get_non_duplicate_sub_folder(a, b):
-    print('______________Folder 1______________')
+    print('______________FOLDERS THAT YOU HAVE TO MOVE TO THE SECOND ONE______________')
     print([x for x in a if x not in b])
-    print('______________Folder 2______________')
-    print([x for x in b if x not in a])
+
+
+def get_first_folder_matched_sub_folders(a, b):
+    return [x for x in a if x not in b]
+
+
+def get_match_rate(a, b):
+    joined_folders = list(sub_folders_0) + list(sub_folders_1)
+    print("Total sub-folders from the two main folders: ", len(joined_folders))
+    unique_joined_folders = dict.fromkeys(joined_folders)
+    print("Total folders without repetition ", len(unique_joined_folders))
+    match_folders = get_first_folder_matched_sub_folders(a, b)
+    match_rate = len(match_folders) / len(unique_joined_folders)
+
+    print(match_rate)
 
 
 print(get_non_duplicate_sub_folder(sub_folders_0, sub_folders_1))
+
+get_match_rate(sub_folders_0, sub_folders_1)
