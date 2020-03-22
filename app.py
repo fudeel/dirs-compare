@@ -6,7 +6,7 @@ folder_2 = []
 input_directory_1 = "D:\Fadil\Loops and Samples"
 input_directory_2 = "D:\Fadil\Music Production\Loops and Samples"
 
-inputs = [input_directory_1]
+inputs = [input_directory_1, input_directory_2]
 
 
 def get_list():
