@@ -1,10 +1,9 @@
 import os
-from tabulate import tabulate
 
 input_directory_1 = "D:\Fadil\Loops and Samples"
 input_directory_2 = "D:\Fadil\Music Production\Loops and Samples"
 
-inputs = [input_directory_2]
+inputs = [input_directory_1, input_directory_2]
 folders = []
 
 
@@ -19,9 +18,11 @@ class FolderInfo:
 
 
 def get_list():
+
     paths = []
     parent_dirs = []
     for i in inputs:
+        print(" current dir " + i)
         for root, dirs, files in os.walk(i, topdown=False):
             paths.append(root)
         paths.pop()
