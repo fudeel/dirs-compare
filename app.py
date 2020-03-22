@@ -39,3 +39,12 @@ def get_list_1():
 sub_folders_0 = get_list_0()
 sub_folders_1 = get_list_1()
 
+
+def get_non_duplicate_sub_folder(a, b):
+    print('______________Folder 1______________')
+    print([x for x in a if x not in b])
+    print('______________Folder 2______________')
+    print([x for x in b if x not in a])
+
+
+print(get_non_duplicate_sub_folder(sub_folders_0, sub_folders_1))
