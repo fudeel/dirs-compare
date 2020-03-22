@@ -22,7 +22,6 @@ def get_list():
     paths = []
     parent_dirs = []
     for i in inputs:
-        print(" current dir " + i)
         for root, dirs, files in os.walk(i, topdown=False):
             paths.append(root)
         paths.pop()
