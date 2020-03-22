@@ -7,18 +7,7 @@ inputs = [input_directory_1, input_directory_2]
 folders = []
 
 
-class FolderInfo:
-    def __init__(self, root, dirs_num, dirs):
-        self.root = root
-        self.dirs_num = dirs_num
-        self.dirs = dirs
-
-    def get_dirs(self):
-        return self.dirs
-
-
 def get_list():
-
     paths = []
     parent_dirs = []
     for i in inputs:
@@ -30,12 +19,7 @@ def get_list():
             parent_dirs.append(parent_dir)
         parent_dirs = list(dict.fromkeys(parent_dirs))  # creating unique elements, since dicts accept only unique keys
 
-        folder = FolderInfo(i, str(len(parent_dirs)), parent_dirs)
-        folders.append(folder)
+        folders.append(parent_dirs)
 
 
 get_list()
-
-
-for f in folders:
-    print(f.get_dirs())
